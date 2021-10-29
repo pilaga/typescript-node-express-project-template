@@ -1,10 +1,13 @@
 import { Router } from 'express';
+import { createExample, deleteExample, getExamples, getExample, updateExample } from '../controllers/exampleController';
 
 const router = Router();
 
-router.post('/');
-router.get('/');
-router.patch('/:id');
-router.delete('/:id');
+//operations supported for example
+router.post('/', createExample);
+router.get('/', getExamples);
+router.get('/:id', getExample);
+router.patch('/:id', updateExample);
+router.delete('/:id', deleteExample);
 
 export default router;
